@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Coiny&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Libertinus+Serif:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-family: "Inter", sans-serif;
+  --second-family: "Libertinus Serif", sans-serif;
+  --third-family: "Fraunces", sans-serif;
+  --font3: "Nimbus Sans", sans-serif;
+  --font4: "FreeSans", sans-serif;
+  --font-logo: "Coiny", sans-serif;
+  --primary-color: #d9773f;
+  --primary-color-dark: #994610;
+  --text-one: #fff;
+  --text-two: #1d1c16;
+  --text-3: #55433a;
+  --disable: #ded9d1;
+  --hover: rgba(30, 26, 23, 0.1);
+  --bg-light: #fef9f0;
+  --bg-dark: #1e1a17;
+  --success: #7ba05b;
+  --error: #ba1a1a;
+}
+
+@layer base {
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: var(--third-family);
+  }
+
+  button {
+    cursor: pointer;
+  }
+}
+
+@utility container {
+  margin-inline: auto;
+  
+}
