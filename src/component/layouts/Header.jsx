@@ -68,7 +68,7 @@ const Header = () => {
                 </div>
 
             </div>
-            <div className="fixed bottom-20 right-0  flex flex-col  gap-1 items-center justify-center">
+            <div className="fixed bottom-20 right-0  flex flex-col  gap-1 items-center justify-center z-50">
                 <Link className=" p-3 bg-(--bg-dark) text-2xl md:text-3xl rounded-tl-md rounded-bl-md text-(--primary-color) border-l-6 border-(--primary-color)"><LuHandPlatter  /></Link>
                 <p className=" w-full flex items-center justify-center p-3 rounded-tl-md rounded-bl-md bg-(--bg-dark) text-xl md:text-2xl text-(--primary-color) border-l-6 border-(--primary-color)">0</p>
             </div>

@@ -5,7 +5,9 @@ const product =[
         price:220,
         image:"/images/product/somusachaat.png",
         category:"startar",
-        description:"Crispy pastry shells filled with spiced potatoes and peas, crushed and topped with tangy yogurt, sweet tamarind chutney, and…"
+        description:"Crispy pastry shells filled with spiced potatoes and peas, crushed and topped with tangy yogurt, sweet tamarind chutney, and…",
+        reating:4.5,
+        quantity:"8 Pcs"
     },
     {
         id:2,
@@ -13,7 +15,9 @@ const product =[
         price:250,
         image:"/images/product/fuska.png",
         category:"startar",
-        description:"Crispy puris filled with spicy potato mixture, topped with tangy tamarind water, yogurt, and sev."
+        description:"Crispy puris filled with spicy potato mixture, topped with tangy tamarind water, yogurt, and sev.",
+        reating:5,
+        quantity:"8 Pcs"
     },
     {
         id:3,
@@ -22,6 +26,8 @@ const product =[
         image:"/images/product/haleem.png",
         category:"startar",
         description:"A traditional slow-cooked meat and lentil stew, tender and flavorful, served with rice and pickles.",
+        rating:4.8,
+        quantity:"1 Bowl"
     },
     { 
         id:4,
@@ -30,6 +36,8 @@ const product =[
         image:"/images/product/royalkachi.png",
         category:"main",
         description:"An aromatic and rich biryani made with marinated meat, basmati rice, and special spices, served with raita and salad.",
+        rating:4.9,
+        quantity:"1:2 Plate"
     },
     {
         id:5,
@@ -37,7 +45,10 @@ const product =[
         price:650,
         image:"/images/product/kichuri.png",
         category:"main",
-        description:"A hearty one-pot dish of rice, beef, and vegetables, seasoned with aromatic spices and herbs."
+        description:"A hearty one-pot dish of rice, beef, and vegetables, seasoned with aromatic spices and herbs.",
+        rating:4.7,
+        quantity:"1:2 Plate"
+
     },
     {
         id:6,
@@ -45,7 +56,9 @@ const product =[
         price:700,
         image:"/images/product/chickenroast.png",
         category:"main",
-        description:"Fragrant rice dish cooked with meat or vegetables, seasoned with traditional spices and served with raita."
+        description:"Fragrant rice dish cooked with meat or vegetables, seasoned with traditional spices and served with raita.",
+        rating:4.6,
+        quantity:"1:2 Plate"
     },
     {
         id:7,
@@ -53,7 +66,9 @@ const product =[
         price:1200,
         image:"/images/product/sorsheelish.png",
         category:"main",
-        description:"Traditional hilsa fish cooked in a tangy mustard sauce, served with steamed rice and papad."
+        description:"Traditional hilsa fish cooked in a tangy mustard sauce, served with steamed rice and papad.",
+        rating:5,
+        quantity:"3 Pcs"
     },
     {
         id:8,
@@ -61,7 +76,9 @@ const product =[
         price:1250,
         image:"/images/product/paencarry.png",
         category:"main",
-        description:"Succulent prawns cooked in a creamy coconut milk sauce with aromatic spices, served with steamed rice."
+        description:"Succulent prawns cooked in a creamy coconut milk sauce with aromatic spices, served with steamed rice.",
+        rating:4.8,
+        quantity:"1:2 Plate"
     },
     {
         id:9,
@@ -69,7 +86,9 @@ const product =[
         price:250,
         image:"/images/product/mistidoi.png",
         category:"dessert",
-        description:"A traditional Bengali sweet yogurt dessert, thick and creamy, flavored with cardamom and saffron."
+        description:"A traditional Bengali sweet yogurt dessert, thick and creamy, flavored with cardamom and saffron.",
+        rating:4.9,
+        quantity:"1 Bowl"
     },
     {
         id:10,
@@ -77,7 +96,9 @@ const product =[
         price:200,
         image:"/images/product/roshgullah.png",
         category:"dessert",
-        description:"Soft and spongy cottage cheese balls soaked in sugar syrup, flavored with cardamom and nuts."
+        description:"Soft and spongy cottage cheese balls soaked in sugar syrup, flavored with cardamom and nuts.",
+        rating:4.7,
+        quantity:"6 Pcs"
     },
     {
         id:11,
@@ -85,7 +106,9 @@ const product =[
         price:350,
         image:"/images/product/shahifaluda.png",
         category:"dessert",
-        description:"A rich and creamy dessert drink, layered with vermicelli, rose syrup, and nuts."
+        description:"A rich and creamy dessert drink, layered with vermicelli, rose syrup, and nuts.",
+        rating:4.8,
+        quantity:"1 Glass"
     },
     {
         id:12,
@@ -93,7 +116,9 @@ const product =[
         price:500,
         image:"/images/product/vortha.png",
         category:"startar",
-        description:"A selection of traditional Bengali vegetable preparations, including alu bhorta, shak bhorta, and more."
+        description:"A selection of traditional Bengali vegetable preparations, including alu bhorta, shak bhorta, and more.",
+        rating:4.5,
+        quantity:"1 Platter"
     },
     {
         id:13,
@@ -101,7 +126,9 @@ const product =[
         price:600,
         image:"/images/product/cake.png",
         category:"dessert",
-        description:"A decadent dark chocolate tart infused with cardamom and served with whipped cream."
+        description:"A decadent dark chocolate tart infused with cardamom and served with whipped cream.",
+        rating:4.9,
+        quantity:"2 Slice"
     },
     {
         id:14,
@@ -109,7 +136,9 @@ const product =[
         price:200,
         image:"/images/product/borhani.png",
         category:"beverage",
-        description:"A traditional savory yogurt drink spiced with roasted cumin, mint, and a hint of black salt. The perfect digestive accompaniment to richcurries."
+        description:"A traditional savory yogurt drink spiced with roasted cumin, mint, and a hint of black salt. The perfect digestive accompaniment to richcurries.",
+        rating:4.6,
+        quantity:"500 ml"
     },
     {
         id:15,
@@ -117,7 +146,9 @@ const product =[
         price:300,
         image:"/images/product/lassi.png",
         category:"beverage",
-        description:"Sweet, creamy yogurt blended with ripe seasonal Alphonso mangoes, garnished with crushed pistachios."
+        description:"Sweet, creamy yogurt blended with ripe seasonal Alphonso mangoes, garnished with crushed pistachios.",
+        rating:4.8,
+        quantity:"1 Glass"
     },
     {
         id:16,
@@ -125,7 +156,9 @@ const product =[
         price:150,
         image:"/images/product/lemonsoda.png",
         category:"beverage",
-        description:"Refreshing carbonated drink with a zing of fresh lime and a hint of mint."
+        description:"Refreshing carbonated drink with a zing of fresh lime and a hint of mint.",
+        rating:4,
+        quantity:"500 ml"
     }
 
 
