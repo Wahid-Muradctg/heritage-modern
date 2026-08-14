@@ -1,9 +1,17 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import Button from './../component/ui/Button';
 import experience from './../data/experience';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { useSelector } from 'react-redux';
+import DishCard from './../component/ui/DishCard';
+import 'swiper/css';
 
 
 const Home = () => {
+    const swiperRef = useRef(null);
+    const mainProducts = useSelector((state) =>
+        state.product.allProducts.filter((p) => p.category === "main")
+    );
     return (
         <div>
             {/* hero section start */}
@@ -55,12 +63,48 @@ const Home = () => {
                         <div className='absolute -top-8 -right-18 w-32 h-32 md:w-52 md:h-52 border-4 border-white rounded-xl'>
                             <img src={experience[2].image} alt={experience[2].title} className='object-cover w-full h-full rounded-xl' />
                         </div>
-
-
-
                     </div>
                 </div>
             </div>
+            {/* product section start */}
+            <div className='bg-(--bg-light) '>
+                <div className='container py-12 md:py-20 px-3 md:px-0'>
+                    <div className='flex items-center justify-between'>
+                        <div>
+                            <h2>Signature Dishes</h2>
+                            <p>Curated selections from our master chefs.</p>
+                        </div>
+                        <div>
+                            <div className='flex items-center gap-4'>
+                                <button onClick={() => swiperRef.current?.slidePrev()} className='w-11 h-11 border-2 border-(--primary-color-dark) text-(--primary-color-dark) rounded-full transition hover:bg-(--primary-color-dark) hover:text-white'>&#8592;</button>
+                                <button onClick={() => swiperRef.current?.slideNext()} className='w-11 h-11 border-2 border-(--primary-color-dark) text-(--primary-color-dark) rounded-full transition hover:bg-(--primary-color-dark) hover:text-white'>&#8594;</button>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    {/* product items start */}
+                    <div className='mt-10'>
+                        <Swiper
+                            ref={swiperRef}
+                            onBeforeInit={(swiper) => { swiperRef.current = swiper; }}
+                            slidesPerView={3}
+                            spaceBetween={20}
+                            breakpoints={{
+                                0: { slidesPerView: 1 },
+                                640: { slidesPerView: 2 },
+                                1024: { slidesPerView: 3 },
+                            }}
+                        >
+                            {mainProducts.map((p) => (
+                                <SwiperSlide key={p.id}>
+                                    <DishCard {...p} />
+                                </SwiperSlide>
+                            ))}
+                        </Swiper>
+                    </div>
+                </div>
+            </div>
+
 
 
         </div>

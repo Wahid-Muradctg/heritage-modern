@@ -6,7 +6,7 @@ const product =[
         image:"/images/product/somusachaat.png",
         category:"startar",
         description:"Crispy pastry shells filled with spiced potatoes and peas, crushed and topped with tangy yogurt, sweet tamarind chutney, and…",
-        reating:4.5,
+        rating:4.5,
         quantity:"8 Pcs"
     },
     {
@@ -16,7 +16,7 @@ const product =[
         image:"/images/product/fuska.png",
         category:"startar",
         description:"Crispy puris filled with spicy potato mixture, topped with tangy tamarind water, yogurt, and sev.",
-        reating:5,
+        rating:5,
         quantity:"8 Pcs"
     },
     {

@@ -4,12 +4,15 @@ import { IoClose, IoRemove, IoAdd } from "react-icons/io5";
 import { FaPlateWheat } from "react-icons/fa6";
 import { decrement, increment, removeFromCart } from '../../redux/cartSlice';
 import Button from './Button';
+import { Link } from 'react-router';
+import { BiDish } from "react-icons/bi";
+
 
 const CartDrawer = ({ isOpen, onClose,  }) => {
     
     const dispatch = useDispatch();
     const cartItem = useSelector(state => state.cart.item);
-    const total = cartItem.reduce((sum, item) => sum + parseFloat((item.price).replace('$', '')) * item.quantity, 0)
+const total = cartItem.reduce((sum, item) => sum + parseFloat(item.price) * item.quantity, 0);
     return (
         <div className={`fixed top-0 left-0 w-full h-screen bg-[rgba(0,0,0,0.5)] z-50 transition-opacity duration-300 ease-in-out ${isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}
             onClick={onClose}>
@@ -34,24 +37,26 @@ const CartDrawer = ({ isOpen, onClose,  }) => {
                         <div>
                             {
                                 cartItem.map((item) => (
-                                    <div key={item.id} className="flex items-center gap-3 p-3 border border-(--primary-color-dark) rounded-lg">
+                                    <div key={item.id} className="flex items-center justify-between gap-5 p-3 ) ">
                                         <img
                                             src={item.image}
-                                            alt={item.title}
-                                            className="w-14 h-14 md:w-20 md:h-20 object-cover rounded-lg shrink-0"
+                                            alt={item.name}
+                                            className="w-14 h-14 md:size-22 object-cover rounded-lg shrink-0"
                                         />
 
-                                        <div className="w-24 md:w-32 shrink-0 md:me-10">
-                                            <p className="text-sm md:text-md font-medium text-(--text-two) truncate">
-                                                {item.title}
+                                        <div className="flex-1 md:me-4 ">
+                                            <p className="text-md md:text-xl font-medium text-(--text-two) mb-2">
+                                                {item.name}
                                             </p>
-                                            <p className='text-(--text-3) text-xs md:text-sm'>{item.description}</p>
-                                            <p className="text-sm md:text-md font-semibold text-(--primary-color-dark) mt-1">
-                                                {item.price}
+                                            <p className='text-(--text-3) text-xs md:text-md  font-family'>
+                                                {item.description.split(' ').slice(0, 6).join(' ') + (item.description.split(' ').length > 5 ? '...' : '')}
+                                                </p>
+                                            <p className="text-md md:text-xl font-semibold text-(--primary-color-dark) mt-2 "> ৳
+                                                {item.price} <span className='ms-2 text-(--primary-color-dark)/50 text-sm md:text-md'>{item.packQuantity}</span>
                                             </p>
                                         </div>
 
-                                        <div className="inline-flex justify-center items-center shrink-0 relative p-1 md:p-2 rounded-[170px] bg-(--primary-color) border border-(--primary-color-dark)/30 text-(--primary-color-dark) text-sm md:text-base font-medium" >
+                                        <div className="shrink-0 flex justify-center items-center relative p-1 md:p-2 rounded-md border border-(--primary-color-dark)/30 text-(--primary-color-dark) text-sm md:text-base " >
                                             <Button
                                                 onClick={() => dispatch(decrement(item.id))}
                                                 rIcon={IoRemove}
@@ -66,21 +71,31 @@ const CartDrawer = ({ isOpen, onClose,  }) => {
                                                 rIcon={IoAdd}
                                                 className="flex! items-center justify-center md:w-8.5 md:h-8.5 rounded-full  text-(--primary-color-dark) text-lg!"
                                             />
-                                        </div>
-
-                                        <div className="flex-1" />
+                                        </div>                                      
 
                                         <Button
                                             onClick={() => dispatch(removeFromCart(item.id))}
-                                            lIcon={IoClose}
+                                            rIcon={IoClose}
                                             className="text-(--primary-color-dark)! hover:text-(--error)! text-lg! shrink-0"
                                         />
                                         
                                     </div>
+                                   
+                                    
                                 ))
                             }
                         </div>
                     )}
+                </div>
+                <div className="absolute bottom-0 left-0 right-0 p-5 bg-(--hover) border-t-2 border-(--primary-color-dark)">
+                    <div className="flex items-center justify-between mb-4">
+                        <p className="text-lg font-semibold text-(--primary-color-dark)">Total</p>
+                        <p className="text-xl font-bold text-(--primary-color-dark)">৳ {total}</p>
+                    </div>
+                    <div className='flex items-center justify-around gap-4'>
+                        <Link className='flex justify-center items-center w-1/2 bg-(--primary-color-dark) text-white hover:bg-(--primary-color) text-xl py-3 rounded-md gap-3'>View Dish <BiDish /> </Link>
+                        <Link className='flex justify-center items-center w-1/2 bg-(--primary-color-dark) text-white hover:bg-(--primary-color) text-xl py-3 rounded-md gap-3'>Checkout Dish <BiDish /></Link>
+                    </div>
                 </div>
 
             </div>
