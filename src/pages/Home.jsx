@@ -5,6 +5,8 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { useSelector } from 'react-redux';
 import DishCard from './../component/ui/DishCard';
 import 'swiper/css';
+import { FaArrowLeft,FaArrowRight } from "react-icons/fa6";
+
 
 
 const Home = () => {
@@ -20,7 +22,7 @@ const Home = () => {
                     <h1 className='text-white text-5xl md:text-6xl'>The Heart of <br /> Bangladeshi Heritage</h1>
                     <p className='text-white text-sm md:text-base mt-5 font-family'>Experience the authentic taste of tradition in every bite.</p>
                     <div className='mt-10 flex items-center gap-8'>
-                        <Button text="Reserve a Table" className='px-5 py-3 bg-(--primary-color-dark) hover:bg-(--primary-color) transition duration-300 text-white rounded-md' />
+                        <Button text="Book a Table" className='px-5 py-3 bg-(--primary-color-dark) hover:bg-(--primary-color) transition duration-300 text-white rounded-md' />
                         <Button text="View Menu" className='text-white border-2 border-white px-8 py-2.5 hover:border-(--bg-dark) hover:bg-(--bg-dark) transition duration-300  rounded-md' />
                     </div>
                 </div>
@@ -44,23 +46,19 @@ const Home = () => {
                                         <h4 className='text-(--text-two) md:text-2xl text:xl font-semibold mb-2'>{exp.title}</h4>
                                         <p dangerouslySetInnerHTML={{ __html: exp.description }} className='text-(--text-3) md:text-md text-sm font-family' />
                                     </div>
-
                                 </div>
                             ))
                             }
-
                         </div>
-
-
                     </div>
                     <div className='relative'>
                         <div>
                             <img src={experience[1].image} alt={experience[1].title} className='object-cover' />
                         </div>
-                        <div className='absolute -bottom-8 -left-18 w-32 h-32 md:w-52 md:h-52 border-4 border-white rounded-xl'>
+                        <div className='absolute -bottom-4 md:-bottom-8 left-0 md:-left-18 w-30 h-30 md:w-52 md:h-52 border-4 border-white rounded-xl'>
                             <img src={experience[0].image} alt={experience[0].title} className='object-cover w-full h-full rounded-xl' />
                         </div>
-                        <div className='absolute -top-8 -right-18 w-32 h-32 md:w-52 md:h-52 border-4 border-white rounded-xl'>
+                        <div className='absolute -top-4 md:-top-8 right-0 md:-right-18 w-30 h-30 md:w-52 md:h-52 border-4 border-white rounded-xl'>
                             <img src={experience[2].image} alt={experience[2].title} className='object-cover w-full h-full rounded-xl' />
                         </div>
                     </div>
@@ -71,16 +69,15 @@ const Home = () => {
                 <div className='container py-12 md:py-20 px-3 md:px-0'>
                     <div className='flex items-center justify-between'>
                         <div>
-                            <h2>Signature Dishes</h2>
-                            <p>Curated selections from our master chefs.</p>
+                            <h2 className='text-3xl md:text-5xl font-semibold'>Signature Dishes</h2>
+                            <p className='text-sm md:text-xl my-3 md:my-5 text-(--text-3) font-family'>Curated selections from our master chefs.</p>
                         </div>
-                        <div>
-                            <div className='flex items-center gap-4'>
-                                <button onClick={() => swiperRef.current?.slidePrev()} className='w-11 h-11 border-2 border-(--primary-color-dark) text-(--primary-color-dark) rounded-full transition hover:bg-(--primary-color-dark) hover:text-white'>&#8592;</button>
-                                <button onClick={() => swiperRef.current?.slideNext()} className='w-11 h-11 border-2 border-(--primary-color-dark) text-(--primary-color-dark) rounded-full transition hover:bg-(--primary-color-dark) hover:text-white'>&#8594;</button>
+                        <div className='hidden md:block'>
+                            <div className='flex items-center gap-4 '>
+                                <Button onClick={() => swiperRef.current?.slidePrev()} className='w-11 h-11 flex items-center justify-center border-2 border-(--primary-color-dark) text-(--primary-color-dark) rounded-full transition hover:bg-(--primary-color-dark) hover:text-white' rIcon={FaArrowLeft} />
+                                <Button onClick={() => swiperRef.current?.slideNext()} className='w-11 h-11 flex items-center justify-center border-2 border-(--primary-color-dark) text-(--primary-color-dark) rounded-full transition hover:bg-(--primary-color-dark) hover:text-white' rIcon={FaArrowRight} />
                             </div>
-                        </div>
-                        
+                        </div>                        
                     </div>
                     {/* product items start */}
                     <div className='mt-10'>
@@ -88,7 +85,7 @@ const Home = () => {
                             ref={swiperRef}
                             onBeforeInit={(swiper) => { swiperRef.current = swiper; }}
                             slidesPerView={3}
-                            spaceBetween={20}
+                            spaceBetween={25}
                             breakpoints={{
                                 0: { slidesPerView: 1 },
                                 640: { slidesPerView: 2 },
@@ -96,7 +93,7 @@ const Home = () => {
                             }}
                         >
                             {mainProducts.map((p) => (
-                                <SwiperSlide key={p.id}>
+                                <SwiperSlide key={p.id} className='h-full'>
                                     <DishCard {...p} />
                                 </SwiperSlide>
                             ))}
@@ -104,6 +101,11 @@ const Home = () => {
                     </div>
                 </div>
             </div>
+            {/* testomonial section start */}
+            <div>
+                
+            </div>
+
 
 
 

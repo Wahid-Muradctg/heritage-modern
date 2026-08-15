@@ -1,11 +1,13 @@
 import React from 'react';
 import { createPortal } from 'react-dom';
 import Button from './Button';
-import { IoClose, IoRemove, IoAdd, IoBag } from "react-icons/io5";
+import { IoClose, IoRemove, IoAdd, } from "react-icons/io5";
 import Rating from 'react-rating';
 import { IoMdStarOutline } from "react-icons/io";
 import { useDispatch, useSelector } from 'react-redux';
 import { addToCart, decrement } from '../../redux/cartSlice';
+import { BiDish } from "react-icons/bi";
+
 
 
 const ItemView = ({ product, onClose }) => {
@@ -22,7 +24,7 @@ const ItemView = ({ product, onClose }) => {
 
     return createPortal(
         <div className='fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60' onClick={onClose}>
-            <div className='relative flex w-full max-w-[896px] overflow-hidden rounded-xl bg-(--bg-light) shadow-2xl' onClick={(e) => e.stopPropagation()}>
+            <div className='relative flex w-full max-w-225 overflow-hidden rounded-xl bg-(--bg-light) shadow-2xl' onClick={(e) => e.stopPropagation()}>
 
                 <div className='hidden md:flex w-1/2 min-h-[560px] bg-(--bg-dark)'>
                     <img src={product.image} alt={product.name} className='w-full h-full object-cover' />
@@ -54,9 +56,9 @@ const ItemView = ({ product, onClose }) => {
                                 className='flex! items-center justify-center w-12 h-12 text-(--text-two) text-lg!' />
                         </div>
 
-                        <Button onClick={handleAdd} text="Add to Order"
+                        <Button onClick={handleAdd} text="Add Dish"
                             className='flex! items-center justify-center gap-2 px-8 py-4 bg-(--primary-color-dark) text-white font-bold rounded hover:bg-(--primary-color) transition shadow-lg'
-                            rIcon={IoBag} />
+                            rIcon={BiDish} />
                     </div>
                 </div>
 
