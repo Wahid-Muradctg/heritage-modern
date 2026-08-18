@@ -61,7 +61,7 @@ const Header = () => {
                 </div>
             </nav>
             {/* mobile menu*/}
-            <div onClick={toggleMenu} className={`md:hidden fixed top-0 left-0 w-full h-full bg-[rgb(0,0,0)]/40  transition-all duration-300 ${open ? " translate-x-0" : " -translate-x-full"}`}>
+            <div onClick={toggleMenu} className={`md:hidden fixed z-50 top-0 left-0 w-full h-full bg-[rgb(0,0,0)]/40  transition-all duration-300 ${open ? " translate-x-0" : " -translate-x-full"}`}>
                 <div className="w-[80%] h-full bg-(--bg-dark)  " onClick={(e) => { e.stopPropagation() }}>
                     <Link to="/" className="flex items-center justify-center gap-2 py-5 shadow-[0_5px_15px_rgba(255,255,255,0.15)]">
                         <img className="size-10 md:size-15" src="/images/screen.png" alt="logo" />

@@ -5,12 +5,17 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { useSelector } from 'react-redux';
 import DishCard from './../component/ui/DishCard';
 import 'swiper/css';
-import { FaArrowLeft,FaArrowRight } from "react-icons/fa6";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
+import testomonialData from './../data/testomonial';
+import TestimonialCard from '../component/ui/TestimonialCard';
+import { Autoplay } from 'swiper/modules';
+
 
 
 
 const Home = () => {
     const swiperRef = useRef(null);
+    const testomonialSwiperRef = useRef(null);
     const mainProducts = useSelector((state) =>
         state.product.allProducts.filter((p) => p.category === "main")
     );
@@ -77,7 +82,7 @@ const Home = () => {
                                 <Button onClick={() => swiperRef.current?.slidePrev()} className='w-11 h-11 flex items-center justify-center border-2 border-(--primary-color-dark) text-(--primary-color-dark) rounded-full transition hover:bg-(--primary-color-dark) hover:text-white' rIcon={FaArrowLeft} />
                                 <Button onClick={() => swiperRef.current?.slideNext()} className='w-11 h-11 flex items-center justify-center border-2 border-(--primary-color-dark) text-(--primary-color-dark) rounded-full transition hover:bg-(--primary-color-dark) hover:text-white' rIcon={FaArrowRight} />
                             </div>
-                        </div>                        
+                        </div>
                     </div>
                     {/* product items start */}
                     <div className='mt-10'>
@@ -102,12 +107,45 @@ const Home = () => {
                 </div>
             </div>
             {/* testomonial section start */}
-            <div>
-                
+            <div className='bg-(--bg-dark)'>
+                <div className='container py-12 md:py-23 px-3 md:px-0'>
+                    <h2 className='text-3xl md:text-5xl font-semibold text-white text-center'>Voices of Our Guests</h2>
+                    <p className='text-md md:text-xl my-3 md:my-5  text-white text-center font-family'>Stories of flavor, nostalgia, and unforgettable evenings.</p>
+                    <div className='mt-20'>
+                        <Swiper 
+                        ref={testomonialSwiperRef}
+                            onBeforeInit={(swiper) => { testomonialSwiperRef.current = swiper; }}
+                            slidesPerView={2}
+                            spaceBetween={20}
+                            modules={[Autoplay]}
+                            autoplay={{ delay: 1500, disableOnInteraction: false }}
+                            loop={true}
+                            breakpoints={{
+                                0: { slidesPerView: 1 },
+                                640: { slidesPerView: 2 },
+                                1024: { slidesPerView: 2 },
+                            }}
+                        
+                        >
+                            {[...testomonialData, ...testomonialData].map((t, index) => (
+                    <SwiperSlide key={`${t.id}-${index}`} className='h-full'>
+                        <TestimonialCard {...t} />
+                    </SwiperSlide>
+                ))}
+           
+
+                        </Swiper>
+
+
+                    </div>
+
+                </div>
+
+
             </div>
 
 
-
+ <hr className='text-(--text-3)'/>
 
         </div>
     );

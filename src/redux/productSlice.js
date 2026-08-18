@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSelector, createSlice } from "@reduxjs/toolkit";
 import product from "../data/product";
 
 const initialState = {
@@ -21,8 +21,10 @@ const productSlice = createSlice({
     },
 });
 
-export const selectFilteredProducts = (state) => {
-    const { allProducts, category, priceRange, searchTerm, currentPage, itemsPerPage } = state.product;
+export const selectFilteredProducts = createSelector(
+    (state) => state.product,
+    (product) => {
+    const { allProducts, category, priceRange, searchTerm, currentPage, itemsPerPage } = product;
     const [min, max] = priceRange;
     const filtered = allProducts.filter((p) => {
         const matchCategory = category === "all" || p.category === category;
@@ -35,6 +37,6 @@ export const selectFilteredProducts = (state) => {
         items: filtered.slice(start, start + itemsPerPage),
         totalPages:Math.max(1,Math.ceil(filtered.length / itemsPerPage)),
     };
-};
+});
 export const { setCategory, setPriceRange, setSearchTerm, setCurrentPage } = productSlice.actions;
 export default productSlice.reducer;

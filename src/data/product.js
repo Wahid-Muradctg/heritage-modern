@@ -4,7 +4,7 @@ const product =[
         name:"Heritage Samosa Chaat",
         price:220,
         image:"/images/product/somusachaat.png",
-        category:"startar",
+        category:"starter",
         description:"Crispy pastry shells filled with spiced potatoes and peas, crushed and topped with tangy yogurt, sweet tamarind chutney, and…",
         rating:4.5,
         quantity:"8 Pcs"
@@ -14,7 +14,7 @@ const product =[
         name:"Signature Fuchka",
         price:250,
         image:"/images/product/fuska.png",
-        category:"startar",
+        category:"starter",
         description:"Crispy puris filled with spicy potato mixture, topped with tangy tamarind water, yogurt, and sev.",
         rating:5,
         quantity:"8 Pcs"
@@ -24,7 +24,7 @@ const product =[
         name:"Slow-cooked Haleem",
         price:350,
         image:"/images/product/haleem.png",
-        category:"startar",
+        category:"starter",
         description:"A traditional slow-cooked meat and lentil stew, tender and flavorful, served with rice and pickles.",
         rating:4.8,
         quantity:"1 Bowl"
@@ -115,7 +115,7 @@ const product =[
         name:"Assorted Bhorta Platter",
         price:500,
         image:"/images/product/vortha.png",
-        category:"startar",
+        category:"starter",
         description:"A selection of traditional Bengali vegetable preparations, including alu bhorta, shak bhorta, and more.",
         rating:4.5,
         quantity:"1 Platter"
