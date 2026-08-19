@@ -3,6 +3,12 @@ import { Link } from 'react-router';
 import { FaFacebookSquare } from "react-icons/fa";
 import { FaInstagramSquare } from "react-icons/fa";
 import { IoLogoYoutube } from "react-icons/io5";
+import { HiLocationMarker } from "react-icons/hi";
+import { FaPhoneVolume } from "react-icons/fa6";
+import { SiMinutemailer } from "react-icons/si";
+
+
+
 
 
 
@@ -47,10 +53,10 @@ const Footer = () => {
                     </ul>
                 </div>
                 <div className='my-4'>
-                    <p className='text-(--primary-color-dark) text-xl'>Visit Us</p>
-                    <p className='mt-4 text-white text-sm'>123 G.E.C Circle <br/> Chittagong 4012, Bangladesh</p>
-                    <p className='mt-4 text-(--primary-color-dark)'>+880 1234 567 890</p>
-                    <p className='text-(--primary-color-dark)'>info@heritagemodern.com</p>
+                    <p className='text-(--primary-color-dark) text-xl '>Visit Us</p>
+                    <p className='flex items-center gap-2 mt-4 text-white text-sm '> <HiLocationMarker className='text-xl' />123 G.E.C Circle <br/> Chittagong 4012, Bangladesh</p>
+                    <p className='flex items-center gap-2 mt-4 text-(--primary-color-dark)'><FaPhoneVolume />+880 1234 567 890</p>
+                    <p className='flex items-center gap-2 text-(--primary-color-dark)'><SiMinutemailer />info@heritagemodern.com</p>
                 </div>
                 
             </div>

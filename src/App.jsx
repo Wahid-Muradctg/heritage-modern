@@ -9,6 +9,7 @@ import { Provider } from "react-redux"
 import store from './redux/store'
 import Menu from "./pages/Menu"
 import DishCart from "./pages/DishCart"
+import Checkout from "./pages/Checkout"
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
               <Route index element={<Home />} />
               <Route path="/menu" element={<Menu />} />
               <Route path="/dishcart" element={<DishCart />} />
+              <Route path="/checkout" element={<Checkout/>} />
               
               <Route path='*' element={<Error />} />
 

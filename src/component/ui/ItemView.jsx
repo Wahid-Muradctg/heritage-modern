@@ -26,7 +26,7 @@ const ItemView = ({ product, onClose }) => {
         <div className='fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60' onClick={onClose}>
             <div className='relative flex w-full max-w-225 overflow-hidden rounded-xl bg-(--bg-light) shadow-2xl' onClick={(e) => e.stopPropagation()}>
 
-                <div className='hidden md:flex w-1/2 min-h-[560px] bg-(--bg-dark)'>
+                <div className='hidden md:flex w-1/2 min-h-140 bg-(--bg-dark)'>
                     <img src={product.image} alt={product.name} className='w-full h-full object-cover' />
                 </div>
 
@@ -49,11 +49,11 @@ const ItemView = ({ product, onClose }) => {
                         <div className='flex items-center bg-(--bg-light) border border-(--disable) rounded'>
                             <Button onClick={() => dispatch(decrement(product.id))}
                                 rIcon={IoRemove}
-                                className='flex! items-center justify-center w-12 h-12 text-(--text-two) text-lg!' />
-                            <span className='w-12 text-center font-bold text-(--text-two)'>{cartItem ? cartItem.quantity : 0}</span>
+                                className='flex! items-center justify-center md:w-12 w-8 h-12 text-(--text-two) text-md md:text-lg!' />
+                            <span className='md:w-12 w-8 text-center font-bold text-(--text-two)'>{cartItem ? cartItem.quantity : 0}</span>
                             <Button onClick={() => dispatch(addToCart({ product }))}
                                 rIcon={IoAdd}
-                                className='flex! items-center justify-center w-12 h-12 text-(--text-two) text-lg!' />
+                                className='flex! items-center justify-center md:w-12 w-8 h-12 text-(--text-two) text-md md:text-lg!' />
                         </div>
 
                         <Button onClick={handleAdd} text="Add Dish"

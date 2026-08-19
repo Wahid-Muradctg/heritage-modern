@@ -21,6 +21,11 @@ const productSlice = createSlice({
     },
 });
 
+export const selectMainProducts = createSelector(
+    (state) => state.product.allProducts,
+    (allProducts) => allProducts.filter((p) => p.category === "main")
+);
+
 export const selectFilteredProducts = createSelector(
     (state) => state.product,
     (product) => {

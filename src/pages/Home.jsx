@@ -7,6 +7,7 @@ import DishCard from './../component/ui/DishCard';
 import 'swiper/css';
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
 import testomonialData from './../data/testomonial';
+import { selectMainProducts } from './../redux/productSlice';
 import TestimonialCard from '../component/ui/TestimonialCard';
 import { Autoplay } from 'swiper/modules';
 
@@ -16,9 +17,7 @@ import { Autoplay } from 'swiper/modules';
 const Home = () => {
     const swiperRef = useRef(null);
     const testomonialSwiperRef = useRef(null);
-    const mainProducts = useSelector((state) =>
-        state.product.allProducts.filter((p) => p.category === "main")
-    );
+    const mainProducts = useSelector(selectMainProducts);
     return (
         <div>
             {/* hero section start */}

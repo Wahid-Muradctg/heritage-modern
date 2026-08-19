@@ -37,7 +37,7 @@ const total = cartItem.reduce((sum, item) => sum + parseFloat(item.price) * item
                         <div>
                             {
                                 cartItem.map((item) => (
-                                    <div key={item.id} className="flex items-center justify-between gap-5 p-3 ) ">
+                                    <div key={item.id} className="flex items-center justify-between gap-2 md:gap-5 p-2 md:p-4 border-b border-(--primary-color-dark)/20 hover:bg-(--primary-color-dark)/5 transition-colors duration-300 ease-in-out ) ">
                                         <img
                                             src={item.image}
                                             alt={item.name}
@@ -45,14 +45,14 @@ const total = cartItem.reduce((sum, item) => sum + parseFloat(item.price) * item
                                         />
 
                                         <div className="flex-1 md:me-4 ">
-                                            <p className="text-md md:text-xl font-medium text-(--text-two) mb-2">
+                                            <p className="text-sm md:text-xl font-medium text-(--text-two) mb-2">
                                                 {item.name}
                                             </p>
-                                            <p className='text-(--text-3) text-xs md:text-md  font-family'>
+                                            <p className='text-(--text-3) text-xs md:text-md hidden md:block  font-family'>
                                                 {item.description.split(' ').slice(0, 6).join(' ') + (item.description.split(' ').length > 5 ? '...' : '')}
                                                 </p>
-                                            <p className="text-md md:text-xl font-semibold text-(--primary-color-dark) mt-2 "> ৳
-                                                {item.price} <span className='ms-2 text-(--primary-color-dark)/50 text-sm md:text-md'>{item.packQuantity}</span>
+                                            <p className="text-sm md:text-xl font-semibold text-(--primary-color-dark) mt-2 "> ৳
+                                                {item.price} <span className='ms-2 text-(--primary-color-dark)/50 text-xs md:text-md'>{item.packQuantity}</span>
                                             </p>
                                         </div>
 
@@ -93,8 +93,8 @@ const total = cartItem.reduce((sum, item) => sum + parseFloat(item.price) * item
                         <p className="text-xl font-bold text-(--primary-color-dark)">৳ {total}</p>
                     </div>
                     <div className='flex items-center justify-around gap-4'>
-                        <Link to='dishcart' className='flex justify-center items-center w-1/2 bg-(--primary-color-dark) text-white hover:bg-(--primary-color) text-md  md:text-xl py-3 rounded-md gap-3'>View Dish <BiDish /> </Link>
-                        <Link className='flex justify-center items-center w-1/2 bg-(--primary-color-dark) text-white hover:bg-(--primary-color) text-md  md:text-xl py-3 rounded-md gap-3'>Checkout Dish <BiDish /></Link>
+                        <Link to='dishcart' className='flex justify-center items-center w-1/2 bg-(--primary-color-dark) text-white hover:bg-(--primary-color) text-sm  md:text-xl py-3 rounded-md gap-1 md:gap-3'>View Dish <BiDish /> </Link>
+                        <Link className='flex justify-center items-center w-1/2 bg-(--primary-color-dark) text-white hover:bg-(--primary-color) text-sm  md:text-xl py-3 rounded-md px-1 gap-1 md:gap-3'>Checkout Dish <BiDish /></Link>
                     </div>
                 </div>
 

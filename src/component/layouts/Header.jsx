@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Link, NavLink } from "react-router";
+import { Link, NavLink, useLocation } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
 import { LuHandPlatter } from "react-icons/lu";
 import Button from "../ui/Button";
@@ -15,12 +15,17 @@ const Header = () => {
     const cartCount = useSelector((state) => state.cart.item.length);
     const flyProduct = useSelector((state) => state.cart.flyProduct);
     const cartTargetRef = useRef(null);
+    const location = useLocation();
+    useEffect(() => {
+        setOpen(false)
+        setCartOpen(false)
+    }, [location.pathname])
 
     useEffect(() => {
         if (!flyProduct) return;
         const t = setTimeout(() => dispatch(clearFly()), 850);
         return () => clearTimeout(t);
-    }, [flyProduct]);
+    }, [flyProduct,dispatch]);
 
     const toggleMenu = () => {
         setOpen(!open)
@@ -56,7 +61,7 @@ const Header = () => {
 
                     </div>
                     <Button onClick={toggleMenu} rIcon={FaHamburger} className="text-(--primary-color) text-2xl md:hidden mb-1.5 " />
-                    <Link className="text-white bg-(--primary-color-dark) px-6 py-3 rounded-md hover:bg-(--primary-color) transition font-(family-name:--second-family)  hidden md:block ">Reserve a Table</Link>
+                    <Link className="text-white bg-(--primary-color-dark) px-6 py-3 rounded-md hover:bg-(--primary-color) transition font-(family-name:--second-family)  hidden md:block ">Book a Table</Link>
 
                 </div>
             </nav>
@@ -81,7 +86,7 @@ const Header = () => {
 
             </div>
             <div ref={cartTargetRef} className="fixed bottom-20 right-0  flex flex-col  gap-1 items-center justify-center z-50">
-                <Link className=" p-3 bg-(--bg-dark) text-2xl md:text-3xl rounded-tl-md rounded-bl-md text-(--primary-color) border-l-6 border-(--primary-color)"><LuHandPlatter /></Link>
+                <Link to="dishcart" className=" p-3 bg-(--bg-dark) text-2xl md:text-3xl rounded-tl-md rounded-bl-md text-(--primary-color) border-l-6 border-(--primary-color)"><LuHandPlatter /></Link>
                 <p className=" w-full flex items-center justify-center p-3 rounded-tl-md rounded-bl-md bg-(--bg-dark) text-xl md:text-2xl text-(--primary-color) border-l-6 border-(--primary-color)">{cartCount}</p>
             </div>
             <CartDrawer isOpen={cartOpen} onClose={() => setCartOpen(false)} />
