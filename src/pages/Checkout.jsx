@@ -26,7 +26,7 @@ const Checkout = () => {
                 <p className='text-md md:text-xl text-(--text-3) font-family'>Complete your Dish details below.</p>
 
                 <h4 className='mt-12 mb-5 flex items-center gap-3 text-xl md:text-3xl text-(--text-two)'><GiStorkDelivery className='text-(--primary-color-dark)' />Drop-off Details</h4>
-                <div className=' flex flex-col md:flex-row'>
+                <div className=' flex flex-col md:flex-row gap-5'>
                     <div className='md:w-[62%] p-5 rounded-xl border border-(--primary-color-dark)/20 shadow-[0px_12px_32px_0_rgba(30,26,23,0.15)]'>
                         <form className='w-full'>
                             <div className='grid grid-cols-1 md:grid-cols-2 gap-5 mb-5'>
@@ -49,14 +49,37 @@ const Checkout = () => {
                                             <option key={loc.id} value={loc.name} className='bg-(--bg-light)'>{loc.name}</option>
                                         ))}
                                     </select>
-                                    
+
                                 </div>
                             </div>
-                                <div>
-                                    <label for="address" className='block text-(--text-3) mb-2'>Delivery Address</label>
-                                    <input type="text" id='address' placeholder='Enter your delivery address' className='w-full px-4 py-3 rounded-lg border border-(--primary-color-dark)/30 focus:outline-none focus:border-(--primary-color-dark)' />
-                                </div>
+                            <div>
+                                <label for="address" className='block text-(--text-3) mb-2'>Delivery Address</label>
+                                <input type="text" id='address' placeholder='Enter your delivery address' className='w-full px-4 py-3 rounded-lg border border-(--primary-color-dark)/30 focus:outline-none focus:border-(--primary-color-dark)' />
+                            </div>
                         </form>
+
+                    </div>
+                    <div className='w-[38%] p-5 rounded-xl border border-(--primary-color-dark)/20 shadow-[0px_12px_32px_0_rgba(30,26,23,0.15)]'>
+                        <p className='text-xl md:text-3xl text-(--text-two)'>Added Dish Summary</p>
+                        <div className='space-y-4'>
+                            {cartItem.map((item) => (
+
+                                <div className='flex gap-3 items-center pb-4 border-b border-(--primary-color-dark)/20'>
+                                    <div>
+                                        <img className='w-12' src={item.image} />
+                                    </div>
+                                    <div >
+                                        <h4 className='text-(--primary-color-dark) font-semibold'>{item.name}</h4>
+                                        <div className='flex gap-3'>
+                                            <p className='text-(--primary-color-dark) font-semibold'>৳{item.price}</p>
+                                            <p className='text-(--text-3)'>x{item.quantity}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            ))}
+
+                        </div>
+
 
                     </div>
 
