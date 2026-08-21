@@ -1,11 +1,13 @@
 import React from 'react';
 
 import { Link } from 'react-router';
+import Title from '../component/layouts/Title';
 
 
 const Error = () => {
     return (
         <div className=' bg-(--bg-light) md:min-h-screen pb-15'>
+            <Title title="Page Not Found | Heritage Modern" description="The page you're looking for doesn't exist." />
             <div className='container  flex flex-col justify-center items-center '>
                 <img src='/images/error.png' alt='error'/>
                 <div className='mt-10 text-center'>

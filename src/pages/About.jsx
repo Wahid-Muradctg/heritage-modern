@@ -2,11 +2,14 @@ import React from 'react';
 import { chefdetails } from '../data/gallery';
 import { galimage } from './../data/gallery';
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
+import Title from '../component/layouts/Title';
 
 
 const About = () => {
     return (
         <div className='bg-(--bg-light) py-10 '>
+            <Title title="About Us | Heritage Modern" description="A journey through time, spice, and modern epicurean elegance." />
+            
             <div className='container px-4 md:px-0'>
                 <div className='text-center md:py-10 '>
                     <h1 className='text-2xl md:text-5xl font-bold md-3 md:mb-5 text-(--text-two)'>Our Heritage</h1>
@@ -14,7 +17,7 @@ const About = () => {
                     {/* about us */}
                     <div className='grid grid-cols-1 md:grid-cols-2 mt-10 md:mt-20 place-items-center mb-10 '>
                         <div>
-                            <img src='/images/about.png' />
+                            <img src='/images/about.png' className='object-cover' />
                         </div>
                         <div>
                             <h4 className='text-start text-2xl md:text-5xl text-(--text-two) mb-5'>Rooted in Tradition, Plated for Today.</h4>

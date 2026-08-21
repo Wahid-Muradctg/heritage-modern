@@ -3,6 +3,7 @@ import { FaPerson } from "react-icons/fa6";
 import { IoClose } from "react-icons/io5";
 import { toast } from 'react-toastify';
 import Button from '../component/ui/Button';
+import Title from '../component/layouts/Title';
 import { useFormValidation } from '../hooks/useFormValidation';
 import { validateAll } from '../utils/validators';
 
@@ -64,9 +65,10 @@ const BookTable = () => {
 
     return (
         <div className='bg-(--bg-light) py-10 md:py-20'>
+            <Title title="Book a Table | Heritage Modern" description="Reserve your table for an unforgettable dining experience." />
             <div className='container grid gap-10 grid-cols-1 md:grid-cols-2 place-items-center px-4 md:px-0'>
                 <div className='relative h-full self-start'>
-                    <img src='/images/booktable.png' />
+                    <img src='/images/booktable.png' className='object-cover' />
                     <p className='text-white text-xl md:text-3xl font-[font-family:--third-family] absolute left-10 bottom-16 md:bottom-25 md:left-17'>An evening of deep-rooted <br />traditions awaits.</p>
 
                 </div>
