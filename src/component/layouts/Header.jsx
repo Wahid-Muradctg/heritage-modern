@@ -61,7 +61,7 @@ const Header = () => {
 
                     </div>
                     <Button onClick={toggleMenu} rIcon={FaHamburger} className="text-(--primary-color) text-2xl md:hidden mb-1.5 " />
-                    <Link className="text-white bg-(--primary-color-dark) px-6 py-3 rounded-md hover:bg-(--primary-color) transition font-(family-name:--second-family)  hidden md:block ">Book a Table</Link>
+                    <Link to='booktable' className="text-white bg-(--primary-color-dark) px-6 py-3 rounded-md hover:bg-(--primary-color) transition font-(family-name:--second-family)  hidden md:block ">Book a Table</Link>
 
                 </div>
             </nav>
@@ -79,7 +79,7 @@ const Header = () => {
                         <li><NavLink to="/contract" className={({ isActive }) => isActive ? "text-(--primary-color-dark) text-xl border-b-2 border-(--primary-color-dark) pb-1" : "text-white hover:text-(--primary-color-dark) text-xl transition"}>Contract</NavLink></li>
                     </ul>
                     <div className="px-8">
-                        <Link className="text-white bg-(--primary-color-dark) px-6 py-3 rounded-md hover:bg-(--primary-color) transition font-(family-name:--second-family) block mt-25 text-center text-2xl">Reserve a Table</Link>
+                        <Link to='booktable' className="text-white bg-(--primary-color-dark) px-6 py-3 rounded-md hover:bg-(--primary-color) transition font-(family-name:--second-family) block mt-25 text-center text-2xl">Book a Table</Link>
                     </div>
 
                 </div>

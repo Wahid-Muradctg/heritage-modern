@@ -94,7 +94,7 @@ const total = cartItem.reduce((sum, item) => sum + parseFloat(item.price) * item
                     </div>
                     <div className='flex items-center justify-around gap-4'>
                         <Link to='dishcart' className='flex justify-center items-center w-1/2 bg-(--primary-color-dark) text-white hover:bg-(--primary-color) text-sm  md:text-xl py-3 rounded-md gap-1 md:gap-3'>View Dish <BiDish /> </Link>
-                        <Link className='flex justify-center items-center w-1/2 bg-(--primary-color-dark) text-white hover:bg-(--primary-color) text-sm  md:text-xl py-3 rounded-md px-1 gap-1 md:gap-3'>Checkout Dish <BiDish /></Link>
+                        <Link to='checkout' className='flex justify-center items-center w-1/2 bg-(--primary-color-dark) text-white hover:bg-(--primary-color) text-sm  md:text-xl py-3 rounded-md px-1 gap-1 md:gap-3'>Checkout Dish <BiDish /></Link>
                     </div>
                 </div>
 
