@@ -38,7 +38,7 @@ const Footer = () => {
                     <p className='text-(--primary-color-dark) text-xl'>Explore</p>
                     <ul className='mt-4 flex gap-3 flex-col '>
                         <li><Link to="/menu" className="text-white hover:text-(--primary-color-dark) text-sm transition-all duration-300 inline-block hover:translate-x-1.5">Menu</Link></li>
-                        <li><Link to="/book" className="text-white hover:text-(--primary-color-dark) text-sm transition-all duration-300 inline-block hover:translate-x-1.5">Reservations</Link></li>
+                        <li><Link to="/booktable" className="text-white hover:text-(--primary-color-dark) text-sm transition-all duration-300 inline-block hover:translate-x-1.5">Reservations</Link></li>
                         <li><Link to="/about" className="text-white hover:text-(--primary-color-dark) text-sm transition-all duration-300 inline-block hover:translate-x-1.5">Our Story</Link></li>
 
                     </ul>
@@ -47,8 +47,8 @@ const Footer = () => {
                     <p className='text-(--primary-color-dark) text-xl'>Company</p>
                     <ul className='mt-4 flex gap-3 flex-col '>
                         <li><Link to="/about" className="text-white hover:text-(--primary-color-dark) text-sm transition-all duration-300 inline-block hover:translate-x-1.5">Gallery</Link></li>
-                        <li><Link to="/carrer" className="text-white hover:text-(--primary-color-dark) text-sm transition-all duration-300 inline-block hover:translate-x-1.5">Contact Us</Link></li>
-                        <li><Link to="/contract" className="text-white hover:text-(--primary-color-dark) text-sm transition-all duration-300 inline-block hover:translate-x-1.5">Our Story</Link></li>
+                        <li><Link to="/contract" className="text-white hover:text-(--primary-color-dark) text-sm transition-all duration-300 inline-block hover:translate-x-1.5">Contact Us</Link></li>
+                        <li><Link to="/careers" className="text-white hover:text-(--primary-color-dark) text-sm transition-all duration-300 inline-block hover:translate-x-1.5">Careers</Link></li>
 
                     </ul>
                 </div>
