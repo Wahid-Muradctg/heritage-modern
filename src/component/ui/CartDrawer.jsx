@@ -16,7 +16,7 @@ const total = cartItem.reduce((sum, item) => sum + parseFloat(item.price) * item
     return (
         <div className={`fixed top-0 left-0 w-full h-screen bg-[rgba(0,0,0,0.5)] z-50 transition-opacity duration-300 ease-in-out ${isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}
             onClick={onClose}>
-            <div className={`fixed top-0 right-0 w-[80%] md:w-[40%] 0 h-full bg-(--bg-light) transition-transform duration-300 ease-in-out ${isOpen ? "translate-x-0" : "translate-x-full"}`}
+            <div className={`fixed top-0 right-0 w-[80%] md:w-[40%] 0 h-full bg-(--bg-light) transition-transform duration-300 ease-in-out flex flex-col ${isOpen ? "translate-x-0" : "translate-x-full"}`}
                 onClick={(e) => e.stopPropagation()}>
                 <div className="flex items-center justify-between p-5 bg-(--hover) border-b-2 border-(--primary-color-dark)">
                     <h2 className="text-lg font-semibold text-(--primary-color-dark)">
@@ -26,7 +26,7 @@ const total = cartItem.reduce((sum, item) => sum + parseFloat(item.price) * item
                     onClick={onClose} className="text-2xl text-(--primary-color-dark) hover:text-(--error)" rIcon={IoClose}/>
                          
                 </div>
-                <div>
+                <div className='overflow-y-auto flex-1 min-h-0'>
                     {cartItem.length === 0 ? (
                         <div className="flex flex-col items-center justify-center flex-1 gap-3 py-20">
                             <FaPlateWheat className="text-9xl mb-10 text-(--primary-color-dark)/30" />
@@ -87,7 +87,7 @@ const total = cartItem.reduce((sum, item) => sum + parseFloat(item.price) * item
                         </div>
                     )}
                 </div>
-                <div className="absolute bottom-0 left-0 right-0 p-5 bg-(--hover) border-t-2 border-(--primary-color-dark)">
+                <div className="p-5 bg-(--hover) border-t-2 border-(--primary-color-dark)">
                     <div className="flex items-center justify-between mb-4">
                         <p className="text-lg font-semibold text-(--primary-color-dark)">Total</p>
                         <p className="text-xl font-bold text-(--primary-color-dark)">৳ {total}</p>
