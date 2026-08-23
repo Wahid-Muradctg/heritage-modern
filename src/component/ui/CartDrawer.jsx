@@ -34,7 +34,7 @@ const total = cartItem.reduce((sum, item) => sum + parseFloat(item.price) * item
                         </div>
 
                     ) : (
-                        <div>
+                        <div className='overflow-y-auto'>
                             {
                                 cartItem.map((item) => (
                                     <div key={item.id} className="flex items-center justify-between gap-2 md:gap-5 p-2 md:p-4 border-b border-(--primary-color-dark)/20 hover:bg-(--primary-color-dark)/5 transition-colors duration-300 ease-in-out ) ">

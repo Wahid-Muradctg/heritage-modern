@@ -12,8 +12,6 @@ import { useFormValidation } from '../hooks/useFormValidation';
 import { validateAll } from '../utils/validators';
 import { BiDish } from "react-icons/bi";
 
-
-
 const location = [
     { id: 1, name: "Agrabad" },
     { id: 2, name: "G.E.C" },
