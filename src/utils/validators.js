@@ -35,6 +35,16 @@ export const rules = {
         if (v.trim().length < 5) return 'Address must be at least 5 characters';
         return '';
     },
+    subject: (v) => {
+        if (!v.trim()) return 'Subject is required';
+        if (v.trim().length < 3) return 'Subject must be at least 3 characters';
+        return '';
+    },
+    message: (v) => {
+        if (!v.trim()) return 'Message is required';
+        if (v.trim().length < 10) return 'Message must be at least 10 characters';
+        return '';
+    },
 };
 
 export const validateField = (name, value) => {

@@ -14,6 +14,7 @@ import DishCart from "./pages/DishCart"
 import Checkout from "./pages/Checkout"
 import About from './pages/About';
 import BookTable from "./pages/BookTable"
+import Contract from './pages/Contract';
 
 
 
@@ -30,6 +31,7 @@ function App() {
               <Route path="/booktable" element={<BookTable/>} />
               <Route path="/dishcart" element={<DishCart />} />
               <Route path="/checkout" element={<Checkout/>} />
+              <Route path="/contract" element={<Contract/>} />
               
               <Route path='*' element={<Error />} />
 
