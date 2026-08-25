@@ -68,92 +68,82 @@ const Contract = () => {
           {/* ================= LEFT SIDE ================= */}
           <div className="flex flex-col gap-6">
             {/* Contact Information */}
-            <div className="rounded-md bg-(--bg-light) border border-(--primary-color-dark)/20 p-7 shadow-[0_10px_30px_rgba(0,0,0,0.15)]">
-              <h2 className=" md:pt-5 text-2xl font-bold text-(--primary-color-dark)">
-                Contact Information
-              </h2>
-
-              {/* Address */}
-              <div className="mt-7 flex gap-4">
-                <div className="pt-1 text-lg text-[#ad4d0d]">
-                  <FaMapMarkerAlt />
+            <div>
+              <div className="rounded-md bg-(--bg-light) border border-(--primary-color-dark)/20 p-7 shadow-[0_10px_30px_rgba(0,0,0,0.15)]">
+                <h2 className=" md:pt-5 text-2xl font-bold text-(--primary-color-dark)">
+                  Contact Information
+                </h2>
+                {/* Address */}
+                <div className="mt-7 flex gap-4">
+                  <div className="pt-1 text-lg text-[#ad4d0d]">
+                    <FaMapMarkerAlt />
+                  </div>
+                  <div>
+                    <h3 className="text-sm font-semibold text-(--primary-color-dark)">
+                      Address
+                    </h3>
+                    <p className="mt-1 text-sm leading-6 text-[#6b5e54]">
+                      123 Heritage Ave, Dhaka 1212,
+                      <br />
+                      Bangladesh
+                    </p>
+                  </div>
                 </div>
-
-                <div>
-                  <h3 className="text-sm font-semibold text-(--primary-color-dark)">
-                    Address
-                  </h3>
-
-                  <p className="mt-1 text-sm leading-6 text-[#6b5e54]">
-                    123 Heritage Ave, Dhaka 1212,
-                    <br />
-                    Bangladesh
-                  </p>
+                {/* Phone */}
+                <div className="mt-6 flex gap-4">
+                  <div className="pt-1 text-lg text-[#ad4d0d]">
+                    <FaPhoneAlt />
+                  </div>
+                  <div>
+                    <h3 className="text-sm font-semibold text-(--primary-color-dark)">
+                      Phone
+                    </h3>
+                    <p className="mt-1 text-sm text-[#6b5e54]">
+                      +880 1234 567890
+                    </p>
+                  </div>
                 </div>
-              </div>
-
-              {/* Phone */}
-              <div className="mt-6 flex gap-4">
-                <div className="pt-1 text-lg text-[#ad4d0d]">
-                  <FaPhoneAlt />
+                {/* Email */}
+                <div className="mt-6 flex gap-4">
+                  <div className="pt-1 text-lg text-[#ad4d0d]">
+                    <FaEnvelope />
+                  </div>
+                  <div>
+                    <h3 className="text-sm font-semibold text-(--primary-color-dark)">
+                      Email
+                    </h3>
+                    <p className="mt-1 text-sm text-[#6b5e54]">
+                      hello@heritagemodern.bd
+                    </p>
+                  </div>
                 </div>
-
-                <div>
-                  <h3 className="text-sm font-semibold text-(--primary-color-dark)">
-                    Phone
-                  </h3>
-
-                  <p className="mt-1 text-sm text-[#6b5e54]">
-                    +880 1234 567890
-                  </p>
-                </div>
-              </div>
-
-              {/* Email */}
-              <div className="mt-6 flex gap-4">
-                <div className="pt-1 text-lg text-[#ad4d0d]">
-                  <FaEnvelope />
-                </div>
-
-                <div>
-                  <h3 className="text-sm font-semibold text-(--primary-color-dark)">
-                    Email
-                  </h3>
-
-                  <p className="mt-1 text-sm text-[#6b5e54]">
-                    hello@heritagemodern.bd
-                  </p>
-                </div>
-              </div>
-
-              {/* Divider */}
-              <div className="my-7 h-px bg-[#dfd4c6]" />
+            </div>           
+             
 
               {/* Hours */}
-              <h2 className="font-serif text-2xl font-bold text-(--primary-color-dark)">
-                Hours
-              </h2>
-
-              <div className="mt-6 space-y-5 text-sm text-[#6b5e54]">
-                <div className="flex justify-between gap-3">
-                  <span className='text-(--primary-color-dark)'>Mon - Thu</span>
-                  <span>12:00 PM - 10:00 PM</span>
-                </div>
-
-                <div className="flex justify-between gap-3">
-                  <span className='text-(--primary-color-dark)'>Fri - Sat</span>
-                  <span>12:00 PM - 11:30 PM</span>
-                </div>
-
-                <div className="flex justify-between gap-3">
-                  <span className='text-(--primary-color-dark)'>Sunday</span>
-                  <span>1:00 PM - 9:00 PM</span>
+              <div className="rounded-md bg-(--bg-light) border border-(--primary-color-dark)/20 p-7 shadow-[0_10px_30px_rgba(0,0,0,0.15)] mt-4 md:mt-6">
+                <h2 className="font-serif text-2xl font-bold text-(--primary-color-dark)">
+                  Heritage Hours
+                </h2>
+                <div className="mt-6 space-y-5 text-sm text-[#6b5e54]">
+                  <div className="flex justify-between gap-3">
+                    <span className='text-(--primary-color-dark)'>Mon - Thu</span>
+                    <span>12:00 PM - 10:00 PM</span>
+                  </div>
+                  <div className="flex justify-between gap-3">
+                    <span className='text-(--primary-color-dark)'>Fri - Sat</span>
+                    <span>12:00 PM - 11:30 PM</span>
+                  </div>
+                  <div className="flex justify-between gap-3">
+                    <span className='text-(--primary-color-dark)'>Sunday</span>
+                    <span>1:00 PM - 9:00 PM</span>
+                  </div>
                 </div>
               </div>
             </div>
 
-            {/* ================= MAP ================= */}
             
+
           </div>
 
           {/* ================= RIGHT SIDE FORM ================= */}
@@ -243,17 +233,17 @@ const Contract = () => {
             </form>
           </div>
         </div>
-        
+
       </div>
       <div className="h-65 mt-8 overflow-hidden rounded-md bg-(--bg-light) border border-(--primary-color-dark)/20  shadow-[0_10px_30px_rgba(0,0,0,0.15)]">
-              <iframe
-                title="Restaurant Location"
-                src="https://www.google.com/maps?q=Dhaka,Bangladesh&output=embed"
-                className="h-full w-full border-0"
-                loading="lazy"
-                allowFullScreen
-              ></iframe>
-            </div>
+        <iframe
+          title="Restaurant Location"
+          src="https://www.google.com/maps?q=Dhaka,Bangladesh&output=embed"
+          className="h-full w-full border-0 grayscale sepia-[.35] hue-rotate-[-15deg] saturate-[2] brightness-[1] contrast-[.8]"
+          loading="lazy"
+          allowFullScreen
+        ></iframe>
+      </div>
     </section>
   );
 };
