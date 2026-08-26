@@ -24,8 +24,11 @@ const Home = () => {
         <div>
             <Title title="Heritage Modern | Bangladeshi Restaurant" description="Experience the authentic taste of Bangladeshi tradition in every bite." />
             {/* hero section start */}
-            <div className='bg-[url(/images/herobg.png)] bg-cover bg-center aspect-2/1 py-15 '>
-                <div className='container px-4 md:px-0 py-30'>
+            <div className='relative h-screen py-15 overflow-hidden'>
+                <video autoPlay muted loop playsInline className='absolute inset-0 w-full h-full object-cover'>
+                    <source src='/images/heritage.mp4' type='video/mp4' />
+                </video>
+                <div className='relative container px-4 md:px-0 py-30'>
                     <h1 className='text-white text-5xl md:text-6xl'>The Heart of <br /> Bangladeshi Heritage</h1>
                     <p className='text-white text-sm md:text-base mt-5 font-family'>Experience the authentic taste of tradition in every bite.</p>
                     <div className='mt-10 flex items-center gap-8'>
